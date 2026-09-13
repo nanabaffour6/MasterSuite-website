@@ -16,6 +16,7 @@ const expectedDownloadUrl =
 const expectedDemoUrl = 'https://youtu.be/O2poPsuxCUA';
 const expectedWhatsAppUrl =
   'https://wa.me/233209492966?text=Hello%2C%20I%20am%20interested%20in%20MasterSuite%20for%20my%20school.';
+const officialLogoPath = '/assets/mastersuite-logo.png';
 const browser = await chromium.launch({
   headless: true,
   executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
@@ -73,7 +74,28 @@ for (const width of viewports) {
     screenshotButtons: document.querySelectorAll(
       'button[aria-label^="Open "][aria-label$=" screenshot"]',
     ).length,
+    logoImages: [...document.querySelectorAll('img[src="/assets/mastersuite-logo.png"]')].map(
+      (image) => ({
+        naturalWidth: image.naturalWidth,
+        naturalHeight: image.naturalHeight,
+      }),
+    ),
   }));
+
+  const visibleOfficialLogos = await page
+    .locator(`img[src="${officialLogoPath}"]`)
+    .evaluateAll((images) =>
+      images.filter((image) => {
+        const rect = image.getBoundingClientRect();
+        const style = window.getComputedStyle(image);
+        return (
+          rect.width > 0 &&
+          rect.height > 0 &&
+          style.visibility !== 'hidden' &&
+          style.display !== 'none'
+        );
+      }).length,
+    );
 
   if (width === 1440) {
     await loadLazyImages(page);
@@ -90,8 +112,23 @@ for (const width of viewports) {
       fullPage: true,
     });
     await page.getByLabel('Open navigation menu').click();
+    const mobileMenuLogoVisible = await page
+      .locator(`nav img[src="${officialLogoPath}"]`)
+      .evaluateAll((images) =>
+        images.some((image) => {
+          const rect = image.getBoundingClientRect();
+          const style = window.getComputedStyle(image);
+          return (
+            rect.width > 0 &&
+            rect.height > 0 &&
+            style.visibility !== 'hidden' &&
+            style.display !== 'none'
+          );
+        }),
+      );
     await page.getByRole('link', { name: 'Features' }).click();
     await page.waitForTimeout(250);
+    results.push({ mobileMenuLogoVisible });
   }
 
   if (width === 1024) {
@@ -141,6 +178,12 @@ for (const width of viewports) {
       metrics.support.mailto === 'mailto:bafcreativegh@gmail.com' &&
       metrics.support.tel === 'tel:+233209492966' &&
       metrics.support.whatsapp === expectedWhatsAppUrl,
+    officialLogosValid:
+      visibleOfficialLogos > 0 &&
+      metrics.logoImages.length > 0 &&
+      metrics.logoImages.every(
+        (image) => image.naturalWidth === 512 && image.naturalHeight === 512,
+      ),
     screenshotButtons: metrics.screenshotButtons,
   });
 

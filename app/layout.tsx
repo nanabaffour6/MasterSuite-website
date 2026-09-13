@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: 'MasterSuite | Free School Management Software',
   description:
     'MasterSuite is a free offline school management system for managing students, fees, attendance, assessment, reports, payroll, timetables, SMS and more.',
+  icons: {
+    icon: '/assets/mastersuite-logo.png',
+    shortcut: '/favicon.png',
+    apple: '/assets/mastersuite-logo.png',
+  },
   openGraph: {
     title: 'MasterSuite | Free School Management Software',
     description:
