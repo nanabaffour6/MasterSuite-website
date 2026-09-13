@@ -8,7 +8,7 @@ import { Navbar } from '@/components/landing/navbar';
 import { ScreenshotGallery } from '@/components/landing/screenshot-gallery';
 import { WhyMasterSuite } from '@/components/landing/why-master-suite';
 
-export default function Home() {
+export default function App() {
   return (
     <>
       <Navbar />
