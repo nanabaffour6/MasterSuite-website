@@ -49,21 +49,10 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hidden lg:block">
-          <figure className="relative ml-auto max-w-[590px]">
-            <img
-              src="/assets/master-suite-hero-laptop.webp"
-              alt="MasterSuite desktop application shown on a laptop"
-              width="495"
-              height="310"
-              className="w-full rounded-[10px] object-contain drop-shadow-[0_24px_34px_rgb(6_43_85/18%)]"
-              fetchPriority="high"
-            />
-          </figure>
-        </div>
+        <HeroProductImage className="hidden lg:block" />
 
         <div className="lg:hidden">
-          <div className="grid items-start gap-5 md:grid-cols-[minmax(0,1fr)_minmax(220px,32vw)]">
+          <div className="grid items-start gap-5 md:grid-cols-[minmax(0,1fr)_minmax(260px,36vw)]">
             <div>
               <p className="mb-3 inline-flex rounded-full bg-[#EFF8FF] px-3 py-1.5 text-xs font-extrabold uppercase text-[#1688E8]">
                 Free School Management Software
@@ -78,16 +67,7 @@ export function Hero() {
                 schools.
               </p>
             </div>
-            <figure className="mx-auto w-full max-w-[230px] md:mt-7">
-              <img
-                src="/assets/master-suite-mobile-phone.webp"
-                alt="MasterSuite mobile reference showing school management modules"
-                width="245"
-                height="385"
-                className="w-full rounded-[12px] object-contain drop-shadow-[0_16px_24px_rgb(6_43_85/22%)]"
-                fetchPriority="high"
-              />
-            </figure>
+            <HeroProductImage className="md:mt-7" />
           </div>
           <ActionButtons
             className="mt-6"
@@ -100,5 +80,28 @@ export function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function HeroProductImage({ className }: { className?: string }) {
+  return (
+    <figure className={className}>
+      <div className="relative mx-auto max-w-[590px] rounded-[18px] border border-[#DCE8F3] bg-white p-3 shadow-[0_24px_46px_rgb(6_43_85/13%)]">
+        <div className="overflow-hidden rounded-[10px] border border-[#DCE8F3] bg-[#F8FBFF]">
+          <img
+            src="/assets/mastersuite-module-launcher.png"
+            alt="MasterSuite Module Launcher showing available school management modules"
+            width="1907"
+            height="841"
+            className="w-full object-contain"
+            fetchPriority="high"
+          />
+        </div>
+        <div
+          aria-hidden="true"
+          className="mx-auto mt-2 h-1.5 w-24 rounded-full bg-[#A9BED4]"
+        />
+      </div>
+    </figure>
   );
 }

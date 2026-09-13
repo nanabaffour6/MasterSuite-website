@@ -40,6 +40,8 @@ export function ActionButtons({
     >
       <a
         href={MASTER_SUITE_DOWNLOAD_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         className={cn(
           buttonVariants({ size: 'lg' }),
           'h-12 rounded-[8px] px-5 text-base font-bold shadow-[0_14px_28px_rgb(6_43_85/18%)] focus-visible:ring-[#1688E8]',
@@ -52,6 +54,8 @@ export function ActionButtons({
       </a>
       <a
         href={MASTER_SUITE_DEMO_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         className={cn(
           buttonVariants({ variant: 'outline', size: 'lg' }),
           'h-12 rounded-[8px] px-5 text-base font-bold focus-visible:ring-[#1688E8]',

@@ -46,6 +46,8 @@ export function Navbar() {
 
         <a
           href={MASTER_SUITE_DOWNLOAD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className={cn(
             buttonVariants({ size: 'lg' }),
             'hidden h-11 rounded-[8px] border-[#062B55] bg-[#062B55] px-4 text-sm font-bold text-white shadow-[0_12px_24px_rgb(6_43_85/14%)] hover:bg-[#0B3F75] focus-visible:ring-[#1688E8] lg:inline-flex',
@@ -93,6 +95,8 @@ export function Navbar() {
             ))}
             <a
               href={MASTER_SUITE_DOWNLOAD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className={cn(
                 buttonVariants({ size: 'lg' }),
