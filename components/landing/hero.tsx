@@ -1,6 +1,7 @@
 import { CheckCircle2 } from 'lucide-react';
 
 import { ActionButtons } from '@/components/landing/action-buttons';
+import { ReleaseLine } from '@/components/landing/release-info';
 
 const trustItems = [
   '100% Free',
@@ -44,6 +45,7 @@ export function Hero() {
             schools.
           </p>
           <ActionButtons className="mt-7" />
+          <ReleaseLine className="mt-3" />
           <div className="mt-6">
             <TrustIndicators />
           </div>
@@ -74,6 +76,7 @@ export function Hero() {
             fullWidth
             downloadLabel="Download MasterSuite"
           />
+          <ReleaseLine className="mt-3" />
           <div className="mt-5">
             <TrustIndicators />
           </div>

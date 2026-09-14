@@ -1,4 +1,5 @@
 import { ActionButtons } from '@/components/landing/action-buttons';
+import { CurrentReleaseCard } from '@/components/landing/release-info';
 
 export function FinalCTA() {
   return (
@@ -14,6 +15,7 @@ export function FinalCTA() {
           Give your school a complete management system for students, fees,
           attendance, reports, payroll, timetables and more.
         </p>
+        <CurrentReleaseCard />
         <ActionButtons
           tone="dark"
           className="mx-auto mt-7 justify-center"

@@ -3,6 +3,10 @@ export const MASTER_SUITE_DOWNLOAD_URL =
 
 export const MASTER_SUITE_DEMO_URL = 'https://youtu.be/O2poPsuxCUA';
 
+export const MASTER_SUITE_VERSION = '1.0.1';
+export const MASTER_SUITE_BUILD = '2026.09.01.19';
+export const MASTER_SUITE_CHANNEL = 'Stable';
+
 export const MASTER_SUITE_SUPPORT_EMAIL = 'bafcreativegh@gmail.com';
 export const MASTER_SUITE_SUPPORT_PHONE = '0209492966';
 export const MASTER_SUITE_WHATSAPP_NUMBER = '+233209492966';
