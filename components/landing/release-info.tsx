@@ -1,6 +1,7 @@
 import {
   MASTER_SUITE_BUILD,
   MASTER_SUITE_CHANNEL,
+  MASTER_SUITE_RELEASE_DATE,
   MASTER_SUITE_VERSION,
 } from '@/lib/site-config';
 import { cn } from '@/lib/utils';
@@ -40,8 +41,26 @@ export function CurrentReleaseCard() {
       <p className="mt-1 text-sm font-semibold text-[#DCEFFF]">
         Build {MASTER_SUITE_BUILD} • {MASTER_SUITE_CHANNEL}
       </p>
+      <p className="mt-1 text-sm text-[#DCEFFF]">
+        Released {MASTER_SUITE_RELEASE_DATE}
+      </p>
       <p className="mt-2 text-xs font-extrabold uppercase tracking-[0.08em] text-white/75">
         Free Download
+      </p>
+    </div>
+  );
+}
+
+export function UpgradeNotice() {
+  return (
+    <div className="mx-auto mt-5 max-w-2xl rounded-[8px] border border-white/15 bg-white/6 px-4 py-3 text-left sm:text-center">
+      <p className="text-sm font-extrabold text-white">
+        Already using MasterSuite?
+      </p>
+      <p className="mt-1 text-sm leading-6 text-[#DCEFFF]">
+        Back up your school database before installing the latest version. Build{' '}
+        {MASTER_SUITE_BUILD} can be installed over your existing MasterSuite
+        installation during a normal upgrade.
       </p>
     </div>
   );

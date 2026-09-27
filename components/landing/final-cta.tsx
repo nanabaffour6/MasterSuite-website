@@ -1,5 +1,8 @@
 import { ActionButtons } from '@/components/landing/action-buttons';
-import { CurrentReleaseCard } from '@/components/landing/release-info';
+import {
+  CurrentReleaseCard,
+  UpgradeNotice,
+} from '@/components/landing/release-info';
 
 export function FinalCTA() {
   return (
@@ -21,6 +24,7 @@ export function FinalCTA() {
           className="mx-auto mt-7 justify-center"
           downloadLabel="Download MasterSuite"
         />
+        <UpgradeNotice />
       </div>
     </section>
   );

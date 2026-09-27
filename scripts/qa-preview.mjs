@@ -12,15 +12,16 @@ fs.mkdirSync(outputDir, { recursive: true });
 
 const viewports = [320, 375, 390, 430, 768, 1024, 1280, 1440];
 const expectedDownloadUrl =
-  'https://drive.google.com/file/d/1mhs4OXYs460C72EsgtobzKc3tE1cyAJH/view?usp=sharing';
+  'https://drive.google.com/file/d/1biXBNqCmRLsSz1xwuyGsryDITwA8GMiU/view?usp=sharing';
 const expectedDemoUrl = 'https://youtu.be/O2poPsuxCUA';
 const expectedWhatsAppUrl =
   'https://wa.me/233209492966?text=Hello%2C%20I%20am%20interested%20in%20MasterSuite%20for%20my%20school.';
 const officialLogoPath = '/assets/mastersuite-logo.png';
 const expectedRelease = {
   version: '1.0.1',
-  build: '2026.09.01.19',
+  build: '2026.09.27.01',
   channel: 'Stable',
+  releaseDate: '27 September 2026',
 };
 const browser = await chromium.launch({
   headless: true,
@@ -88,6 +89,8 @@ for (const width of viewports) {
     release: {
       hero: document.querySelector('#home')?.textContent ?? '',
       finalCta: document.querySelector('#download')?.textContent ?? '',
+      whatsNew:
+        document.querySelector('#whats-new-heading')?.textContent ?? '',
     },
   }));
 
@@ -193,7 +196,9 @@ for (const width of viewports) {
           text.includes(`MasterSuite ${expectedRelease.version}`) &&
           text.includes(`Build ${expectedRelease.build}`) &&
           text.includes(expectedRelease.channel),
-      ),
+      ) &&
+      metrics.release.finalCta.includes(expectedRelease.releaseDate) &&
+      metrics.release.whatsNew.includes(`Build ${expectedRelease.build}`),
     officialLogosValid:
       visibleOfficialLogos > 0 &&
       metrics.logoImages.length > 0 &&
