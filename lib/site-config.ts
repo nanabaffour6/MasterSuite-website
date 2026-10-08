@@ -1,11 +1,14 @@
 export const MASTER_SUITE_DOWNLOAD_URL =
-  'https://drive.google.com/file/d/1mhs4OXYs460C72EsgtobzKc3tE1cyAJH/view?usp=sharing';
+  'https://drive.google.com/file/d/1hh7C_SMjWFDhP_pzkBlTmxW2LFphkTti/view?usp=sharing';
 
 export const MASTER_SUITE_DEMO_URL = 'https://youtu.be/O2poPsuxCUA';
 
-export const MASTER_SUITE_VERSION = '1.0.1';
-export const MASTER_SUITE_BUILD = '2026.09.01.19';
+export const MASTER_SUITE_VERSION = '1.0.2';
+export const MASTER_SUITE_BUILD = '2026.10.08.01';
 export const MASTER_SUITE_CHANNEL = 'Stable';
+export const MASTER_SUITE_RELEASE_DATE = '8 October 2026';
+export const MASTER_SUITE_RELEASE_DATE_ISO = '2026-10-08';
+export const MASTER_SUITE_SITE_URL = 'https://www.mastersuiteapp.net/';
 
 export const MASTER_SUITE_SUPPORT_EMAIL = 'bafcreativegh@gmail.com';
 export const MASTER_SUITE_SUPPORT_PHONE = '0209492966';

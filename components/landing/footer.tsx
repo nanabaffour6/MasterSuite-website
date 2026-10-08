@@ -8,8 +8,13 @@ import {
   navItems,
 } from '@/lib/site-config';
 
+const subscribeToYear = () => () => {};
+const currentYear = () => new Date().getFullYear();
+
 export function Footer() {
-  const year = new Date().getFullYear();
+  const year = useSyncExternalStore(subscribeToYear, currentYear, () =>
+    Number(import.meta.env.VITE_MASTER_SUITE_BUILD_YEAR),
+  );
 
   return (
     <footer className="bg-white">
@@ -72,3 +77,4 @@ export function Footer() {
     </footer>
   );
 }
+import { useSyncExternalStore } from 'react';

@@ -22,28 +22,28 @@ import {
 const screenshots = [
   {
     title: 'Module Launcher',
-    src: '/assets/mastersuite-module-launcher.png',
+    src: '/assets/mastersuite-module-launcher.webp',
     alt: 'MasterSuite Module Launcher showing available school management modules',
     width: 1907,
     height: 841,
   },
   {
     title: 'Student Management',
-    src: '/assets/mastersuite-student-management.png',
+    src: '/assets/mastersuite-student-management.webp',
     alt: 'MasterSuite Student Management dashboard showing enrolment and class population',
     width: 1907,
     height: 966,
   },
   {
     title: 'Fees & Finance',
-    src: '/assets/mastersuite-fees-finance.png',
+    src: '/assets/mastersuite-fees-finance.webp',
     alt: 'MasterSuite Fees and Finance overview showing fee collection and financial management',
     width: 1902,
     height: 1006,
   },
   {
     title: 'Staff & Payroll',
-    src: '/assets/mastersuite-staff-payroll.png',
+    src: '/assets/mastersuite-staff-payroll.webp',
     alt: 'MasterSuite Staff and Payroll overview showing payroll and staff management',
     width: 1905,
     height: 1010,
@@ -53,11 +53,13 @@ const screenshots = [
 export function ScreenshotGallery() {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   const activeScreenshot =
-    activeIndex === null ? null : screenshots[activeIndex] ?? null;
+    activeIndex === null ? null : (screenshots[activeIndex] ?? null);
 
   const showPrevious = React.useCallback(() => {
     setActiveIndex((index) =>
-      index === null ? index : (index - 1 + screenshots.length) % screenshots.length,
+      index === null
+        ? index
+        : (index - 1 + screenshots.length) % screenshots.length,
     );
   }, []);
 
@@ -111,6 +113,7 @@ export function ScreenshotGallery() {
                             src={screenshot.src}
                             alt={screenshot.alt}
                             loading="lazy"
+                            decoding="async"
                             width={screenshot.width}
                             height={screenshot.height}
                             className="h-full w-full object-contain transition duration-200 group-hover:scale-[1.02]"

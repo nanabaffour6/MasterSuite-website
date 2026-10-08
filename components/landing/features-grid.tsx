@@ -20,7 +20,7 @@ const features = [
   },
   {
     title: 'Fees & Finance',
-    body: 'Track fees, payments, balances, receipts and financial records.',
+    body: 'Manage school fees, payments, balances, receipts and financial records.',
     icon: CreditCard,
     tone: 'text-[#089B72] bg-[#E6FAF2]',
   },
@@ -50,7 +50,7 @@ const features = [
   },
   {
     title: 'Staff & Payroll',
-    body: 'Manage staff records, salaries and payroll.',
+    body: 'Manage staff records, salaries and school payroll, with Ghana PAYE support.',
     icon: UsersRound,
     tone: 'text-[#3C5BEF] bg-[#F0F2FF]',
   },
@@ -74,8 +74,8 @@ export function FeaturesGrid() {
             Powerful Features, All in One Place
           </h2>
           <p className="mt-3 text-base leading-7 text-[#526B85] sm:text-lg">
-            MasterSuite gives schools the tools they need to run efficiently,
-            even without constant internet access.
+            One free school management system for school owners, administrators
+            and teachers, with offline tools for everyday school operations.
           </p>
         </div>
 

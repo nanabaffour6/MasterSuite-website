@@ -18,7 +18,7 @@ export function ActionButtons({
   className,
   fullWidth = false,
   tone = 'light',
-  downloadLabel = 'Download MasterSuite',
+  downloadLabel = 'Download MasterSuite — 100% Free',
 }: ActionButtonsProps) {
   const downloadClasses =
     tone === 'dark'
@@ -44,13 +44,13 @@ export function ActionButtons({
         rel="noopener noreferrer"
         className={cn(
           buttonVariants({ size: 'lg' }),
-          'h-12 rounded-[8px] px-5 text-base font-bold shadow-[0_14px_28px_rgb(6_43_85/18%)] focus-visible:ring-[#1688E8]',
+          'h-auto min-h-12 min-w-0 shrink rounded-[8px] px-3 py-3 text-sm leading-5 whitespace-normal font-bold shadow-[0_14px_28px_rgb(6_43_85/18%)] focus-visible:ring-[#1688E8] sm:px-5',
           downloadClasses,
           fullWidth && 'w-full',
         )}
       >
         <Download aria-hidden="true" />
-        {downloadLabel}
+        <span className="min-w-0 text-center">{downloadLabel}</span>
       </a>
       <a
         href={MASTER_SUITE_DEMO_URL}

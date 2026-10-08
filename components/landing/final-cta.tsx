@@ -1,5 +1,8 @@
 import { ActionButtons } from '@/components/landing/action-buttons';
-import { CurrentReleaseCard } from '@/components/landing/release-info';
+import {
+  CurrentReleaseCard,
+  UpgradeNotice,
+} from '@/components/landing/release-info';
 
 export function FinalCTA() {
   return (
@@ -16,11 +19,8 @@ export function FinalCTA() {
           attendance, reports, payroll, timetables and more.
         </p>
         <CurrentReleaseCard />
-        <ActionButtons
-          tone="dark"
-          className="mx-auto mt-7 justify-center"
-          downloadLabel="Download MasterSuite"
-        />
+        <ActionButtons tone="dark" className="mx-auto mt-7 justify-center" />
+        <UpgradeNotice />
       </div>
     </section>
   );
