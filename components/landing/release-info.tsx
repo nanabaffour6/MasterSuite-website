@@ -3,6 +3,8 @@ import {
   MASTER_SUITE_CHANNEL,
   MASTER_SUITE_RELEASE_DATE,
   MASTER_SUITE_VERSION,
+  MASTER_SUITE_INSTALLER_FILENAME,
+  MASTER_SUITE_INSTALLER_SHA256,
 } from '@/lib/site-config';
 import { cn } from '@/lib/utils';
 
@@ -20,7 +22,7 @@ export function ReleaseLine({ className, tone = 'light' }: ReleaseLineProps) {
         className,
       )}
     >
-      <span>MasterSuite {MASTER_SUITE_VERSION}</span>
+      <span>MasterSuite Desktop {MASTER_SUITE_VERSION}</span>
       <span aria-hidden="true">•</span>
       <span>Build {MASTER_SUITE_BUILD}</span>
       <span aria-hidden="true">•</span>
@@ -36,16 +38,16 @@ export function CurrentReleaseCard() {
         Latest {MASTER_SUITE_CHANNEL} Release
       </p>
       <p className="mt-1 text-xl font-black text-white">
-        MasterSuite {MASTER_SUITE_VERSION}
+        MasterSuite Desktop {MASTER_SUITE_VERSION}
       </p>
       <p className="mt-1 text-sm font-semibold text-[#DCEFFF]">
         Build {MASTER_SUITE_BUILD} • {MASTER_SUITE_CHANNEL}
       </p>
       <p className="mt-1 text-sm text-[#DCEFFF]">
-        Released {MASTER_SUITE_RELEASE_DATE}
+        Build date {MASTER_SUITE_RELEASE_DATE}
       </p>
       <p className="mt-2 text-xs font-extrabold uppercase tracking-[0.08em] text-white/75">
-        100% Free Download
+        Windows · 100% Free Download
       </p>
     </div>
   );
@@ -58,10 +60,26 @@ export function UpgradeNotice() {
         Already using MasterSuite?
       </p>
       <p className="mt-1 text-sm leading-6 text-[#DCEFFF]">
-        Back up your school database before installing the latest version. Build{' '}
-        {MASTER_SUITE_BUILD} can be installed over your existing MasterSuite
-        installation during a normal upgrade.
+        Back up your school data before upgrading to Build {MASTER_SUITE_BUILD}.
+        Keep the existing installation and its data; do not uninstall
+        MasterSuite or delete school records as part of a normal upgrade.
       </p>
+      <p className="mt-2 text-sm leading-6 text-[#DCEFFF]">
+        This Windows installer is not digitally signed. Use the official
+        download and contact support if Windows reports a security concern; do
+        not disable your security protections. Ask support to confirm
+        compatibility with your computer.
+      </p>
+      <details className="mt-3 text-left text-sm text-[#DCEFFF]">
+        <summary className="cursor-pointer rounded-[4px] py-2 font-bold outline-none focus-visible:ring-3 focus-visible:ring-[#8FCBFF]">
+          Verify the Windows installer
+        </summary>
+        <p className="mt-2 break-all">{MASTER_SUITE_INSTALLER_FILENAME}</p>
+        <p className="mt-2">SHA-256:</p>
+        <code className="mt-1 block break-all text-xs leading-6">
+          {MASTER_SUITE_INSTALLER_SHA256}
+        </code>
+      </details>
     </div>
   );
 }

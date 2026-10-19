@@ -19,7 +19,7 @@ export function BuiltByBAFCreative() {
     >
       <div className="mx-auto grid w-full max-w-[1180px] gap-8 px-4 py-9 sm:px-6 lg:grid-cols-[1fr_auto_0.9fr] lg:items-center lg:px-8">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-          <BAFCreativeLogo />
+          <BAFCreativeLogo decorative className="h-14 lg:h-14" />
           <div>
             <h2 className="text-lg font-extrabold text-[#062B55]">
               Built by BAF Creative

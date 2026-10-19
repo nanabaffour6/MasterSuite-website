@@ -12,14 +12,21 @@ export function FinalCTA() {
     >
       <div className="mx-auto w-full max-w-[1180px] px-4 text-center sm:px-6 lg:px-8">
         <h2 className="mx-auto max-w-3xl text-3xl font-black leading-tight sm:text-4xl">
-          Get MasterSuite Today — It&apos;s 100% Free!
+          MasterSuite Desktop Is 100% Free
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-[#DCEFFF] sm:text-lg">
-          Give your school a complete management system for students, fees,
-          attendance, reports, payroll, timetables and more.
+          Run your school on Windows and connect authorised Android users with
+          MasterSuite Companion. Choose your download below.
         </p>
         <CurrentReleaseCard />
-        <ActionButtons tone="dark" className="mx-auto mt-7 justify-center" />
+        <ActionButtons
+          tone="dark"
+          className="mx-auto mt-7 max-w-xl items-center [&>div]:justify-center"
+        />
+        <p className="mt-4 text-sm leading-6 text-[#DCEFFF]">
+          Android APK · Preview/testing release · Compatible school Host
+          required
+        </p>
         <UpgradeNotice />
       </div>
     </section>

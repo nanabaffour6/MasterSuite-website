@@ -6,12 +6,18 @@ import {
   ShieldCheck,
   SlidersHorizontal,
   Wrench,
+  KeyRound,
 } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
 import { MASTER_SUITE_BUILD } from '@/lib/site-config';
 
 const releaseHighlights = [
+  {
+    title: 'Administrator Recovery',
+    body: 'Administrator password recovery helps authorised school administrators regain access.',
+    icon: KeyRound,
+  },
   {
     title: 'Automatic Ghana PAYE',
     body: 'Automatic Ghana PAYE calculation with the latest statutory rates.',

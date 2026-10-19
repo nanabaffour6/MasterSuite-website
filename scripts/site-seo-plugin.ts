@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react';
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, readdir, rm } from 'node:fs/promises';
 import path from 'node:path';
 import { createServer, type Plugin, type ResolvedConfig } from 'vite';
 
@@ -92,6 +92,21 @@ export function siteSeoPlugin(): Plugin {
       });
 
       try {
+        // Do not publish old captures containing school/account/financial information.
+        const assetsPath = path.resolve(
+          config.root,
+          config.build.outDir,
+          'assets',
+        );
+        for (const filename of await readdir(assetsPath)) {
+          if (
+            /^mastersuite-(fees-finance|staff-payroll|student-management)\.(png|webp)$/.test(
+              filename,
+            )
+          ) {
+            await rm(path.join(assetsPath, filename));
+          }
+        }
         const { render } = await renderer.ssrLoadModule('/src/prerender.tsx');
         const indexPath = path.resolve(
           config.root,

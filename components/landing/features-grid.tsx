@@ -68,14 +68,16 @@ export function FeaturesGrid() {
       <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-extrabold uppercase text-[#1688E8]">
-            Everything Your School Needs
+            MasterSuite Desktop · Your Primary School Host
           </p>
           <h2 className="mt-3 text-3xl font-black leading-tight text-[#062B55] sm:text-4xl">
             Powerful Features, All in One Place
           </h2>
           <p className="mt-3 text-base leading-7 text-[#526B85] sm:text-lg">
             One free school management system for school owners, administrators
-            and teachers, with offline tools for everyday school operations.
+            and teachers. Desktop is the primary system for student management,
+            finance, assessments, attendance, staff, payroll, timetables and
+            communication, with offline tools for everyday school operations.
           </p>
         </div>
 

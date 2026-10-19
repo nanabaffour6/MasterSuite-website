@@ -1,4 +1,4 @@
-import { MasterSuiteLogo } from '@/components/landing/logo';
+import { BAFCreativeLogo, MasterSuiteLogo } from '@/components/landing/logo';
 import {
   MASTER_SUITE_SUPPORT_EMAIL,
   MASTER_SUITE_SUPPORT_MAILTO,
@@ -43,10 +43,13 @@ export function Footer() {
         </nav>
 
         <div className="text-sm leading-6 text-[#526B85] lg:text-right">
-          <p>
-            Built by{' '}
-            <span className="font-extrabold text-[#062B55]">BAF Creative</span>
-          </p>
+          <div className="mb-2 flex items-center gap-3 lg:justify-end">
+            <BAFCreativeLogo decorative />
+            <p>
+              Developed by{' '}
+              <span className="font-extrabold text-[#062B55]">BAF Creative</span>
+            </p>
+          </div>
           <a
             href={MASTER_SUITE_SUPPORT_MAILTO}
             className="font-semibold text-[#087DE2] outline-none hover:underline focus-visible:rounded-[4px] focus-visible:ring-3 focus-visible:ring-[#1688E8]/35"

@@ -4,8 +4,8 @@ import { ActionButtons } from '@/components/landing/action-buttons';
 import { ReleaseLine } from '@/components/landing/release-info';
 
 const trustItems = [
-  '100% Free',
-  'No Internet Required',
+  '100% Free Desktop',
+  'Offline Desktop',
   'Safe & Secure',
   'Built for Schools',
 ];
@@ -37,14 +37,18 @@ export function Hero() {
               Free School Management Software
             </p>
             <h1 className="max-w-[560px] text-[2.18rem] font-black leading-[1.08] text-[#062B55] min-[390px]:text-[2.45rem] lg:text-5xl">
-              MasterSuite — Complete School Management.{' '}
-              <span className="text-[#087DE2]">Completely Free.</span>
+              MasterSuite — Smarter School Management,{' '}
+              <span className="text-[#087DE2]">Wherever You Work.</span>
             </h1>
             <p className="mt-4 max-w-[560px] text-base leading-7 text-[#4C647F] lg:mt-5 lg:text-lg lg:leading-8">
-              MasterSuite is 100% free offline school management software for
-              schools and private schools. Manage students, attendance, fees,
-              staff, payroll, assessments, reports, timetables and SMS on your
-              Windows computer.
+              Manage your school&apos;s daily operations with MasterSuite
+              Desktop and access supported school information and tasks through
+              MasterSuite Companion for Android.
+            </p>
+            <p className="mt-3 text-sm font-semibold leading-6 text-[#526B85]">
+              100% free offline school management software for Windows.
+              Companion is a preview/testing release for authorised users of a
+              compatible school Host.
             </p>
             <div className="hidden lg:block">
               <ActionButtons className="mt-7" />

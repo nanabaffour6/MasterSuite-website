@@ -27,27 +27,6 @@ const screenshots = [
     width: 1907,
     height: 841,
   },
-  {
-    title: 'Student Management',
-    src: '/assets/mastersuite-student-management.webp',
-    alt: 'MasterSuite Student Management dashboard showing enrolment and class population',
-    width: 1907,
-    height: 966,
-  },
-  {
-    title: 'Fees & Finance',
-    src: '/assets/mastersuite-fees-finance.webp',
-    alt: 'MasterSuite Fees and Finance overview showing fee collection and financial management',
-    width: 1902,
-    height: 1006,
-  },
-  {
-    title: 'Staff & Payroll',
-    src: '/assets/mastersuite-staff-payroll.webp',
-    alt: 'MasterSuite Staff and Payroll overview showing payroll and staff management',
-    width: 1905,
-    height: 1010,
-  },
 ];
 
 export function ScreenshotGallery() {
@@ -85,8 +64,8 @@ export function ScreenshotGallery() {
                 A Closer Look at MasterSuite
               </h2>
               <p className="mt-3 max-w-xl text-base leading-7 text-[#526B85] sm:text-lg">
-                Explore the real MasterSuite interface used to manage students,
-                finance, staff and day-to-day school administration.
+                Explore the real MasterSuite Module Launcher. Open the preview
+                for a closer look at the school management modules.
               </p>
             </div>
 
@@ -99,7 +78,7 @@ export function ScreenshotGallery() {
                 {screenshots.map((screenshot, index) => (
                   <CarouselItem
                     key={screenshot.title}
-                    className="basis-[86%] pl-3 sm:basis-1/2 lg:basis-1/3"
+                    className="basis-full pl-3"
                   >
                     <Card className="h-full rounded-[8px] border border-[#DCE8F3] bg-white py-0 shadow-[0_14px_34px_rgb(6_43_85/8%)] ring-0">
                       <CardContent className="p-3">

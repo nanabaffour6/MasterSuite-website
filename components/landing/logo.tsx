@@ -37,17 +37,23 @@ export function MasterSuiteLogo({
   );
 }
 
-export function BAFCreativeLogo({ className }: { className?: string }) {
+export function BAFCreativeLogo({
+  className,
+  decorative = false,
+}: {
+  className?: string;
+  decorative?: boolean;
+}) {
   return (
-    <span className={cn('inline-flex items-center gap-3', className)}>
-      <span className="grid h-14 w-16 place-items-center rounded-[8px] bg-[#062B55] text-white shadow-sm">
-        <span className="text-center text-xl font-black leading-none">
-          B<span className="text-[#F5BC24]">A</span>F
-        </span>
-      </span>
-      <span className="text-sm font-black uppercase leading-tight text-[#062B55]">
-        Creative
-      </span>
-    </span>
+    <img
+      src="/assets/baf-creative-logo.png"
+      alt={decorative ? '' : 'BAF Creative'}
+      aria-hidden={decorative ? true : undefined}
+      width={1356}
+      height={1160}
+      loading="lazy"
+      decoding="async"
+      className={cn('h-9 w-auto shrink-0 object-contain lg:h-11', className)}
+    />
   );
 }

@@ -1,10 +1,11 @@
-import { Download, PlayCircle } from 'lucide-react';
+import { Download, PlayCircle, Smartphone } from 'lucide-react';
 
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import {
   MASTER_SUITE_DEMO_URL,
   MASTER_SUITE_DOWNLOAD_URL,
+  MASTER_SUITE_COMPANION_DOWNLOAD_URL,
 } from '@/lib/site-config';
 
 type ActionButtonsProps = {
@@ -18,7 +19,7 @@ export function ActionButtons({
   className,
   fullWidth = false,
   tone = 'light',
-  downloadLabel = 'Download MasterSuite — 100% Free',
+  downloadLabel = 'Download for Windows',
 }: ActionButtonsProps) {
   const downloadClasses =
     tone === 'dark'
@@ -33,32 +34,55 @@ export function ActionButtons({
   return (
     <div
       className={cn(
-        'flex flex-col gap-3 sm:flex-row',
+        'flex flex-col items-start gap-3',
         fullWidth && 'w-full sm:w-auto',
         className,
       )}
     >
-      <a
-        href={MASTER_SUITE_DOWNLOAD_URL}
-        target="_blank"
-        rel="noopener noreferrer"
+      <div
         className={cn(
-          buttonVariants({ size: 'lg' }),
-          'h-auto min-h-12 min-w-0 shrink rounded-[8px] px-3 py-3 text-sm leading-5 whitespace-normal font-bold shadow-[0_14px_28px_rgb(6_43_85/18%)] focus-visible:ring-[#1688E8] sm:px-5',
-          downloadClasses,
+          'flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap',
           fullWidth && 'w-full',
         )}
       >
-        <Download aria-hidden="true" />
-        <span className="min-w-0 text-center">{downloadLabel}</span>
-      </a>
+        <a
+          href={MASTER_SUITE_DOWNLOAD_URL}
+          data-download-platform="windows"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            buttonVariants({ size: 'lg' }),
+            'h-auto min-h-12 min-w-0 shrink rounded-[8px] px-3 py-3 text-sm leading-5 whitespace-normal font-bold shadow-[0_14px_28px_rgb(6_43_85/18%)] focus-visible:ring-[#1688E8] sm:px-5',
+            downloadClasses,
+            fullWidth && 'w-full',
+          )}
+        >
+          <Download aria-hidden="true" />
+          <span className="min-w-0 text-center">{downloadLabel}</span>
+        </a>
+        <a
+          href={MASTER_SUITE_COMPANION_DOWNLOAD_URL}
+          data-download-platform="android"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            buttonVariants({ variant: 'outline', size: 'lg' }),
+            'h-auto min-h-12 min-w-0 shrink rounded-[8px] px-3 py-3 text-sm leading-5 whitespace-normal font-bold focus-visible:ring-[#1688E8] sm:px-5',
+            demoClasses,
+            fullWidth && 'w-full sm:w-auto',
+          )}
+        >
+          <Smartphone aria-hidden="true" />
+          <span className="min-w-0 text-center">Download for Android</span>
+        </a>
+      </div>
       <a
         href={MASTER_SUITE_DEMO_URL}
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
           buttonVariants({ variant: 'outline', size: 'lg' }),
-          'h-12 rounded-[8px] px-5 text-base font-bold focus-visible:ring-[#1688E8]',
+          'h-11 rounded-[8px] px-3 text-sm font-bold focus-visible:ring-[#1688E8]',
           demoClasses,
           fullWidth && 'w-full',
         )}

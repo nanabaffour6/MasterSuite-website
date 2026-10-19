@@ -6,13 +6,15 @@ import {
   MASTER_SUITE_SUPPORT_EMAIL,
   MASTER_SUITE_SUPPORT_TEL,
   MASTER_SUITE_VERSION,
+  MASTER_SUITE_COMPANION_DOWNLOAD_URL,
+  MASTER_SUITE_COMPANION_VERSION,
 } from './site-config';
 
 export const SITE_TITLE =
   'MasterSuite | Free School Management Software for Schools';
 
 export const SITE_DESCRIPTION =
-  'MasterSuite is 100% free offline school management software for Windows. Manage students, fees, payroll, attendance, assessments and reports for your school.';
+  'Manage school operations with free MasterSuite Desktop for Windows and supported mobile tasks with MasterSuite Companion for Android. An authorised school Host is required.';
 
 export const siteStructuredData = {
   '@context': 'https://schema.org',
@@ -40,6 +42,21 @@ export const siteStructuredData = {
       inLanguage: 'en',
       publisher: { '@id': `${MASTER_SUITE_SITE_URL}#organization` },
       about: { '@id': `${MASTER_SUITE_SITE_URL}#software` },
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${MASTER_SUITE_SITE_URL}#companion-software`,
+      name: 'MasterSuite Companion',
+      description:
+        'Preview Android Companion for authorised users of a compatible MasterSuite Desktop school Host. Available information and tasks depend on assigned permissions.',
+      applicationCategory: 'EducationalApplication',
+      operatingSystem: 'Android',
+      softwareVersion: MASTER_SUITE_COMPANION_VERSION,
+      downloadUrl: MASTER_SUITE_COMPANION_DOWNLOAD_URL,
+      url: `${MASTER_SUITE_SITE_URL}#companion`,
+      softwareRequirements:
+        'Compatible MasterSuite Desktop Host, authorised pairing and account access.',
+      publisher: { '@id': `${MASTER_SUITE_SITE_URL}#organization` },
     },
     {
       '@type': 'SoftwareApplication',

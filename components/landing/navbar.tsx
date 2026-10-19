@@ -13,7 +13,11 @@ import {
   SheetTitle,
 } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
-import { MASTER_SUITE_DOWNLOAD_URL, navItems } from '@/lib/site-config';
+import {
+  MASTER_SUITE_DOWNLOAD_URL,
+  MASTER_SUITE_COMPANION_DOWNLOAD_URL,
+  navItems,
+} from '@/lib/site-config';
 
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
@@ -32,7 +36,7 @@ export function Navbar() {
           <MasterSuiteLogo textClassName="text-[1.2rem] sm:text-[1.35rem]" />
         </a>
 
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex xl:gap-6">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -46,6 +50,7 @@ export function Navbar() {
 
         <a
           href={MASTER_SUITE_DOWNLOAD_URL}
+          data-download-platform="windows"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
@@ -54,7 +59,7 @@ export function Navbar() {
           )}
         >
           <Download aria-hidden="true" />
-          Download MasterSuite
+          Download for Windows
         </a>
 
         <Button
@@ -95,6 +100,7 @@ export function Navbar() {
             ))}
             <a
               href={MASTER_SUITE_DOWNLOAD_URL}
+              data-download-platform="windows"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
@@ -104,7 +110,21 @@ export function Navbar() {
               )}
             >
               <Download aria-hidden="true" />
-              Download MasterSuite
+              Download for Windows
+            </a>
+            <a
+              href={MASTER_SUITE_COMPANION_DOWNLOAD_URL}
+              data-download-platform="android"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className={cn(
+                buttonVariants({ variant: 'outline', size: 'lg' }),
+                'h-12 rounded-[8px] border-[#A9BED4] bg-white text-sm font-bold text-[#062B55] focus-visible:ring-[#1688E8]',
+              )}
+            >
+              <Download aria-hidden="true" />
+              Download for Android
             </a>
           </div>
         </SheetContent>

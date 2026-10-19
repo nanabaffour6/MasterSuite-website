@@ -7,28 +7,31 @@ const {
   chromium,
 } = require('C:/Users/BAFFOUR/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 
-const outputDir = path.resolve('previews');
+const outputDir = path.resolve(process.env.MASTER_SUITE_QA_OUTPUT ?? 'previews');
 fs.mkdirSync(outputDir, { recursive: true });
 
 const viewports = [320, 375, 390, 430, 768, 1024, 1280, 1440];
 const previewUrl =
   process.env.MASTER_SUITE_PREVIEW_URL ?? 'http://127.0.0.1:3000/';
 const expectedDownloadUrl =
-  'https://drive.google.com/file/d/1hh7C_SMjWFDhP_pzkBlTmxW2LFphkTti/view?usp=sharing';
+  'https://drive.google.com/file/d/12ar-cWpkE1w8jsaBsN4ZaLCDfk0tjVod/view?usp=sharing';
+const expectedAndroidUrl =
+  'https://drive.google.com/file/d/17AB1PbOqkMfazrQ9T8QH8tlI_vAjuDPZ/view?usp=sharing';
 const expectedDemoUrl = 'https://youtu.be/O2poPsuxCUA';
 const expectedWhatsAppUrl =
   'https://wa.me/233209492966?text=Hello%2C%20I%20am%20interested%20in%20MasterSuite%20for%20my%20school.';
 const officialLogoPath = '/assets/mastersuite-logo.png';
 const expectedRelease = {
   version: '1.0.2',
-  build: '2026.10.08.01',
+  build: '2026.10.17.01',
   channel: 'Stable',
-  releaseDate: '8 October 2026',
+  releaseDate: '17 October 2026',
 };
 const expectedSiteUrl = 'https://www.mastersuiteapp.net/';
 const expectedTitle =
   'MasterSuite | Free School Management Software for Schools';
 const expectedHighlights = [
+  'Administrator password recovery helps authorised school administrators regain access.',
   'Automatic Ghana PAYE calculation with the latest statutory rates.',
   'Optional Manual PAYE mode for customised tax schedules.',
   'Improved Academic Year editing.',
@@ -43,6 +46,17 @@ const browser = await chromium.launch({
 });
 const results = [];
 
+async function newPage(options) {
+  const page = await browser.newPage(options);
+  const fixture = process.env.MASTER_SUITE_QA_ANALYTICS_FIXTURE;
+  if (fixture && ['localhost', '127.0.0.1'].includes(new URL(previewUrl).hostname)) {
+    await page.route('**/_vercel/insights/script.js', (route) => route.fulfill({
+      contentType: 'application/javascript', body: fs.readFileSync(fixture, 'utf8'),
+    }));
+  }
+  return page;
+}
+
 async function loadLazyImages(page) {
   await page.evaluate(async () => {
     const height = document.documentElement.scrollHeight;
@@ -56,7 +70,7 @@ async function loadLazyImages(page) {
 }
 
 for (const width of viewports) {
-  const page = await browser.newPage({
+  const page = await newPage({
     viewport: { width, height: width < 600 ? 920 : 1000 },
     deviceScaleFactor: 1,
     isMobile: width < 768,
@@ -104,6 +118,7 @@ for (const width of viewports) {
       .filter((link) => link.textContent?.includes('Download'))
       .map((link) => ({
         href: link.getAttribute('href'),
+        platform: link.getAttribute('data-download-platform'),
         target: link.getAttribute('target'),
         rel: link.getAttribute('rel'),
       })),
@@ -140,7 +155,7 @@ for (const width of viewports) {
   }));
 
   const softwareSchema = metrics.metadata.schema?.['@graph']?.find(
-    (entry) => entry['@type'] === 'SoftwareApplication',
+    (entry) => entry['@type'] === 'SoftwareApplication' && entry.operatingSystem === 'Windows',
   );
 
   const visibleOfficialLogos = await page
@@ -202,7 +217,7 @@ for (const width of viewports) {
       );
     const mobileDownloadsValid = await page
       .getByRole('dialog')
-      .getByRole('link', { name: 'Download MasterSuite' })
+      .getByRole('link', { name: 'Download for Windows' })
       .evaluate((link) => ({
         href: link.href,
         target: link.target,
@@ -225,7 +240,7 @@ for (const width of viewports) {
     await page.getByLabel('Show next screenshot').click();
     const nextTitle =
       (await page.locator('[data-lightbox-title]').textContent()) ===
-      'Student Management';
+      'Module Launcher';
     await page.getByLabel('Show previous screenshot').click();
     const previousTitle =
       (await page.locator('[data-lightbox-title]').textContent()) ===
@@ -251,7 +266,7 @@ for (const width of viewports) {
       metrics.downloadLinks.length > 0 &&
       metrics.downloadLinks.every(
         (link) =>
-          link.href === expectedDownloadUrl &&
+          link.href === (link.platform === 'android' ? expectedAndroidUrl : expectedDownloadUrl) &&
           link.target === '_blank' &&
           link.rel?.includes('noopener') &&
           link.rel?.includes('noreferrer'),
@@ -272,7 +287,7 @@ for (const width of viewports) {
     releaseValid:
       [metrics.release.hero, metrics.release.finalCta].every(
         (text) =>
-          text.includes(`MasterSuite ${expectedRelease.version}`) &&
+          text.includes(`MasterSuite Desktop ${expectedRelease.version}`) &&
           text.includes(`Build ${expectedRelease.build}`) &&
           text.includes(expectedRelease.channel),
       ) &&
@@ -299,7 +314,7 @@ for (const width of viewports) {
       softwareSchema?.downloadUrl === expectedDownloadUrl &&
       softwareSchema?.softwareVersion ===
         `${expectedRelease.version} (Build ${expectedRelease.build})` &&
-      softwareSchema?.dateModified === '2026-10-08' &&
+      softwareSchema?.dateModified === '2026-10-17' &&
       softwareSchema?.offers?.price === '0' &&
       softwareSchema?.operatingSystem === 'Windows',
     internalLinksValid: metrics.brokenAnchors.length === 0,
@@ -309,16 +324,14 @@ for (const width of viewports) {
         (highlight, index) => highlight === expectedHighlights[index],
       ),
     freePositioningValid: metrics.bodyText.includes('100% Free'),
-    noCompanionClaim: !/companion|mobile push notifications/i.test(
-      metrics.bodyText,
-    ),
+    companionPreviewValid: /MasterSuite Companion/.test(metrics.bodyText) && /preview\/testing release/i.test(metrics.bodyText),
     runtimeErrors,
   });
 
   await page.close();
 }
 
-const crawlPage = await browser.newPage({ javaScriptEnabled: false });
+const crawlPage = await newPage({ javaScriptEnabled: false });
 await crawlPage.goto(previewUrl, { waitUntil: 'load' });
 const crawlable = await crawlPage.evaluate(() => ({
   headline: document.querySelector('h1')?.textContent ?? '',
@@ -352,9 +365,9 @@ results.push({
   crawlableWithoutJavaScript:
     crawlable.headline.includes('MasterSuite') &&
     crawlable.release.includes(expectedRelease.build) &&
-    crawlable.highlights === 7 &&
+    crawlable.highlights === expectedHighlights.length &&
     crawlable.links.length > 0 &&
-    crawlable.links.every((link) => link === expectedDownloadUrl),
+    crawlable.links.every((link) => link === expectedDownloadUrl || link === expectedAndroidUrl),
   robotsValid:
     robotsResponse.status() === 200 &&
     robots.includes('Allow: /') &&
@@ -370,7 +383,7 @@ results.push({
 });
 await crawlPage.close();
 
-const nextYearPage = await browser.newPage();
+const nextYearPage = await newPage();
 const nextYearErrors = [];
 nextYearPage.on('pageerror', (error) => nextYearErrors.push(error.message));
 nextYearPage.on('console', (message) => {
@@ -394,7 +407,7 @@ const failed = results.some(
     Object.values(result).some((value) => value === false) ||
     (result.overflow !== undefined && result.overflow > 0) ||
     (result.screenshotButtons !== undefined &&
-      result.screenshotButtons !== 4) ||
+      result.screenshotButtons !== 1) ||
     (result.runtimeErrors?.length ?? 0) > 0 ||
     (result.lightbox && Object.values(result.lightbox).some((value) => !value)),
 );
