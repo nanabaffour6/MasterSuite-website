@@ -1,12 +1,10 @@
 import {
   Calculator,
-  CheckCircle2,
   FileText,
   Landmark,
-  ShieldCheck,
-  Wrench,
   BookOpen,
   Wallet,
+  Printer,
 } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
@@ -14,44 +12,34 @@ import { MASTER_SUITE_BUILD } from '@/lib/site-config';
 
 const releaseHighlights = [
   {
-    title: 'Mock Total Raw Score',
-    body: 'Corrected the six-subject original-mark total, including additional core classifications and clear missing-mark explanations.',
+    title: 'Improved Mock Result Slips',
+    body: 'Total Raw Score now displays correctly using the four compulsory subjects and the two highest-scoring eligible electives.',
     icon: Calculator,
   },
   {
     title: 'Loans & Advances',
-    body: 'Corrected eligible loan and advance deletion with confirmation, permission checks and audit safeguards.',
+    body: 'You can now delete eligible loan and salary advance records with clearer confirmations and messages.',
     icon: Wallet,
   },
   {
     title: 'School Bank Details',
-    body: 'Protected school bank account settings with authorised access and multi-account selection.',
+    body: 'Authorised administrators can manage school bank account details and select the appropriate account.',
     icon: Landmark,
   },
   {
-    title: 'Bank Advice',
-    body: 'Improved the approved bank-manager letter and employee payment summaries in PDF and Excel.',
+    title: 'Improved Bank Advice',
+    body: 'Generate clearer bank advice letters and staff payment summaries for your bank.',
     icon: FileText,
   },
   {
-    title: 'Document Attribution',
-    body: 'Consistent MasterSuite developer attribution on supported printable documents and generated PDFs.',
-    icon: ShieldCheck,
+    title: 'Updated Reports and PDFs',
+    body: 'Improved presentation and consistent MasterSuite attribution across supported printable documents.',
+    icon: Printer,
   },
   {
-    title: 'Help & Smart Assistance',
-    body: 'Updated existing guidance for Mock marks, bank advice and loan or advance management.',
+    title: 'Better In-App Guidance',
+    body: 'Updated Help Centre and Smart Assistance guidance to make everyday tasks easier.',
     icon: BookOpen,
-  },
-  {
-    title: "What's New",
-    body: 'Improved one-time acknowledgement while preserving existing user preferences.',
-    icon: CheckCircle2,
-  },
-  {
-    title: 'Regression Corrections',
-    body: 'Reported 104 of 104 automated regression commands passed; installed-Windows acceptance remains outstanding.',
-    icon: Wrench,
   },
 ] as const;
 
@@ -65,7 +53,7 @@ export function WhatsNew() {
       <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-extrabold uppercase text-[#1688E8]">
-            Build 2026.10.31.01 · Verified test candidate
+            MasterSuite Desktop · Stable Release
           </p>
           <h2
             id="whats-new-heading"
@@ -75,7 +63,7 @@ export function WhatsNew() {
           </h2>
         </div>
 
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {releaseHighlights.map((highlight) => {
             const Icon = highlight.icon;
 
