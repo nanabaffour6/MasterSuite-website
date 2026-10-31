@@ -1,12 +1,10 @@
 import {
   Calculator,
-  CalendarDays,
-  CheckCircle2,
-  Monitor,
-  ShieldCheck,
-  SlidersHorizontal,
-  Wrench,
-  KeyRound,
+  FileText,
+  Landmark,
+  BookOpen,
+  Wallet,
+  Printer,
 } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
@@ -14,44 +12,34 @@ import { MASTER_SUITE_BUILD } from '@/lib/site-config';
 
 const releaseHighlights = [
   {
-    title: 'Administrator Recovery',
-    body: 'Administrator password recovery helps authorised school administrators regain access.',
-    icon: KeyRound,
-  },
-  {
-    title: 'Automatic Ghana PAYE',
-    body: 'Automatic Ghana PAYE calculation with the latest statutory rates.',
+    title: 'Improved Mock Result Slips',
+    body: 'Total Raw Score now displays correctly using the four compulsory subjects and the two highest-scoring eligible electives.',
     icon: Calculator,
   },
   {
-    title: 'Optional Manual PAYE',
-    body: 'Optional Manual PAYE mode for customised tax schedules.',
-    icon: SlidersHorizontal,
+    title: 'Loans & Advances',
+    body: 'You can now delete eligible loan and salary advance records with clearer confirmations and messages.',
+    icon: Wallet,
   },
   {
-    title: 'Academic Year Editing',
-    body: 'Improved Academic Year editing.',
-    icon: CalendarDays,
+    title: 'School Bank Details',
+    body: 'Authorised administrators can manage school bank account details and select the appropriate account.',
+    icon: Landmark,
   },
   {
-    title: 'Desktop Security',
-    body: 'Stronger desktop security and safer navigation.',
-    icon: ShieldCheck,
+    title: 'Improved Bank Advice',
+    body: 'Generate clearer bank advice letters and staff payment summaries for your bank.',
+    icon: FileText,
   },
   {
-    title: 'Windows Branding & Icons',
-    body: 'Improved Windows application branding and icons.',
-    icon: Monitor,
+    title: 'Updated Reports and PDFs',
+    body: 'Improved presentation and consistent MasterSuite attribution across supported printable documents.',
+    icon: Printer,
   },
   {
-    title: 'Stability & Reliability',
-    body: 'Better stability and reliability.',
-    icon: CheckCircle2,
-  },
-  {
-    title: 'Fixes & Performance',
-    body: 'General bug fixes and performance improvements.',
-    icon: Wrench,
+    title: 'Better In-App Guidance',
+    body: 'Updated Help Centre and Smart Assistance guidance to make everyday tasks easier.',
+    icon: BookOpen,
   },
 ] as const;
 
@@ -65,7 +53,7 @@ export function WhatsNew() {
       <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-extrabold uppercase text-[#1688E8]">
-            Latest Stable Release
+            MasterSuite Desktop · Stable Release
           </p>
           <h2
             id="whats-new-heading"
@@ -75,7 +63,7 @@ export function WhatsNew() {
           </h2>
         </div>
 
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {releaseHighlights.map((highlight) => {
             const Icon = highlight.icon;
 

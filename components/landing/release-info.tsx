@@ -44,7 +44,7 @@ export function CurrentReleaseCard() {
         Build {MASTER_SUITE_BUILD} • {MASTER_SUITE_CHANNEL}
       </p>
       <p className="mt-1 text-sm text-[#DCEFFF]">
-        Build date {MASTER_SUITE_RELEASE_DATE}
+        Released {MASTER_SUITE_RELEASE_DATE}
       </p>
       <p className="mt-2 text-xs font-extrabold uppercase tracking-[0.08em] text-white/75">
         Windows · 100% Free Download
@@ -61,14 +61,12 @@ export function UpgradeNotice() {
       </p>
       <p className="mt-1 text-sm leading-6 text-[#DCEFFF]">
         Back up your school data before upgrading to Build {MASTER_SUITE_BUILD}.
-        Keep the existing installation and its data; do not uninstall
-        MasterSuite or delete school records as part of a normal upgrade.
+        Keep your existing school records and follow the normal upgrade process.
       </p>
       <p className="mt-2 text-sm leading-6 text-[#DCEFFF]">
-        This Windows installer is not digitally signed. Use the official
-        download and contact support if Windows reports a security concern; do
-        not disable your security protections. Ask support to confirm
-        compatibility with your computer.
+        This Windows installer is not digitally signed. Download it only from
+        the official link and contact support if Windows displays a security
+        warning; do not disable your security protections.
       </p>
       <details className="mt-3 text-left text-sm text-[#DCEFFF]">
         <summary className="cursor-pointer rounded-[4px] py-2 font-bold outline-none focus-visible:ring-3 focus-visible:ring-[#8FCBFF]">
