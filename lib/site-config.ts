@@ -6,17 +6,17 @@ export const MASTER_SUITE_COMPANION_DOWNLOAD_URL =
 export const MASTER_SUITE_COMPANION_VERSION = '1.0.1';
 export const MASTER_SUITE_COMPANION_CHANNEL = 'Preview / testing release';
 export const MASTER_SUITE_INSTALLER_FILENAME =
-  'MasterSuite-Setup-1.0.2-Build-2026.10.17.01.exe';
+  'MasterSuite-Setup-1.0.3-Build-2026.10.31.01.exe';
 export const MASTER_SUITE_INSTALLER_SHA256 =
-  '73969C0D9B35F11B12E4C94F7747DB4898A55C2261BE4D4C1C5BF9F462A7008E';
+  '79D598B1B7E52D3305F80039B69F9658E59AD691CAFE8E37A6E976E3ED9A7352';
 
 export const MASTER_SUITE_DEMO_URL = 'https://youtu.be/O2poPsuxCUA';
 
-export const MASTER_SUITE_VERSION = '1.0.2';
-export const MASTER_SUITE_BUILD = '2026.10.17.01';
-export const MASTER_SUITE_CHANNEL = 'Stable';
-export const MASTER_SUITE_RELEASE_DATE = '17 October 2026';
-export const MASTER_SUITE_RELEASE_DATE_ISO = '2026-10-17';
+export const MASTER_SUITE_VERSION = '1.0.3';
+export const MASTER_SUITE_BUILD = '2026.10.31.01';
+export const MASTER_SUITE_CHANNEL = 'Verified test candidate — public release pending';
+export const MASTER_SUITE_RELEASE_DATE = '31 October 2026';
+export const MASTER_SUITE_RELEASE_DATE_ISO = '2026-10-31';
 export const MASTER_SUITE_SITE_URL = 'https://www.mastersuiteapp.net/';
 
 export const MASTER_SUITE_SUPPORT_EMAIL = 'bafcreativegh@gmail.com';
