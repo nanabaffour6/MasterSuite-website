@@ -1,12 +1,12 @@
 import {
   Calculator,
-  CalendarDays,
   CheckCircle2,
-  Monitor,
+  FileText,
+  Landmark,
   ShieldCheck,
-  SlidersHorizontal,
   Wrench,
-  KeyRound,
+  BookOpen,
+  Wallet,
 } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
@@ -14,43 +14,43 @@ import { MASTER_SUITE_BUILD } from '@/lib/site-config';
 
 const releaseHighlights = [
   {
-    title: 'Administrator Recovery',
-    body: 'Administrator password recovery helps authorised school administrators regain access.',
-    icon: KeyRound,
-  },
-  {
-    title: 'Automatic Ghana PAYE',
-    body: 'Automatic Ghana PAYE calculation with the latest statutory rates.',
+    title: 'Mock Total Raw Score',
+    body: 'Corrected the six-subject original-mark total, including additional core classifications and clear missing-mark explanations.',
     icon: Calculator,
   },
   {
-    title: 'Optional Manual PAYE',
-    body: 'Optional Manual PAYE mode for customised tax schedules.',
-    icon: SlidersHorizontal,
+    title: 'Loans & Advances',
+    body: 'Corrected eligible loan and advance deletion with confirmation, permission checks and audit safeguards.',
+    icon: Wallet,
   },
   {
-    title: 'Academic Year Editing',
-    body: 'Improved Academic Year editing.',
-    icon: CalendarDays,
+    title: 'School Bank Details',
+    body: 'Protected school bank account settings with authorised access and multi-account selection.',
+    icon: Landmark,
   },
   {
-    title: 'Desktop Security',
-    body: 'Stronger desktop security and safer navigation.',
+    title: 'Bank Advice',
+    body: 'Improved the approved bank-manager letter and employee payment summaries in PDF and Excel.',
+    icon: FileText,
+  },
+  {
+    title: 'Document Attribution',
+    body: 'Consistent MasterSuite developer attribution on supported printable documents and generated PDFs.',
     icon: ShieldCheck,
   },
   {
-    title: 'Windows Branding & Icons',
-    body: 'Improved Windows application branding and icons.',
-    icon: Monitor,
+    title: 'Help & Smart Assistance',
+    body: 'Updated existing guidance for Mock marks, bank advice and loan or advance management.',
+    icon: BookOpen,
   },
   {
-    title: 'Stability & Reliability',
-    body: 'Better stability and reliability.',
+    title: "What's New",
+    body: 'Improved one-time acknowledgement while preserving existing user preferences.',
     icon: CheckCircle2,
   },
   {
-    title: 'Fixes & Performance',
-    body: 'General bug fixes and performance improvements.',
+    title: 'Regression Corrections',
+    body: 'Reported 104 of 104 automated regression commands passed; installed-Windows acceptance remains outstanding.',
     icon: Wrench,
   },
 ] as const;
@@ -65,7 +65,7 @@ export function WhatsNew() {
       <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-extrabold uppercase text-[#1688E8]">
-            Latest Stable Release
+            Build 2026.10.31.01 · Verified test candidate
           </p>
           <h2
             id="whats-new-heading"
