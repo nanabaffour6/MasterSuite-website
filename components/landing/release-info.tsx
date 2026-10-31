@@ -35,7 +35,7 @@ export function CurrentReleaseCard() {
   return (
     <div className="mx-auto mt-6 w-full max-w-sm rounded-[8px] border border-white/18 bg-white/8 px-4 py-3 text-center shadow-[0_14px_30px_rgb(0_0_0/10%)]">
       <p className="text-xs font-extrabold uppercase tracking-[0.08em] text-[#8FCBFF]">
-        Latest {MASTER_SUITE_CHANNEL} Release
+        Latest {MASTER_SUITE_CHANNEL} Build
       </p>
       <p className="mt-1 text-xl font-black text-white">
         MasterSuite Desktop {MASTER_SUITE_VERSION}
@@ -47,7 +47,7 @@ export function CurrentReleaseCard() {
         Build date {MASTER_SUITE_RELEASE_DATE}
       </p>
       <p className="mt-2 text-xs font-extrabold uppercase tracking-[0.08em] text-white/75">
-        Windows · 100% Free Download
+        Windows · Test candidate · Public release pending
       </p>
     </div>
   );
@@ -57,18 +57,18 @@ export function UpgradeNotice() {
   return (
     <div className="mx-auto mt-5 max-w-2xl rounded-[8px] border border-white/15 bg-white/6 px-4 py-3 text-left sm:text-center">
       <p className="text-sm font-extrabold text-white">
-        Already using MasterSuite?
+        Existing MasterSuite users — do not upgrade yet
       </p>
       <p className="mt-1 text-sm leading-6 text-[#DCEFFF]">
-        Back up your school data before upgrading to Build {MASTER_SUITE_BUILD}.
-        Keep the existing installation and its data; do not uninstall
-        MasterSuite or delete school records as part of a normal upgrade.
+        Build {MASTER_SUITE_BUILD} is a verified test candidate, not an approved public release.
+        Do not install it on a production school computer or upgrade your existing
+        MasterSuite installation. Keep your current application and backups unchanged.
       </p>
       <p className="mt-2 text-sm leading-6 text-[#DCEFFF]">
-        This Windows installer is not digitally signed. Use the official
-        download and contact support if Windows reports a security concern; do
-        not disable your security protections. Ask support to confirm
-        compatibility with your computer.
+        Windows clean-install, upgrade, licence, Host/LAN, shortcut and data-preservation
+        acceptance remains outstanding, along with a security-advisory disposition.
+        The installer is unsigned. Use only an authorised disposable Windows test
+        environment with synthetic school data; do not bypass Windows security warnings.
       </p>
       <details className="mt-3 text-left text-sm text-[#DCEFFF]">
         <summary className="cursor-pointer rounded-[4px] py-2 font-bold outline-none focus-visible:ring-3 focus-visible:ring-[#8FCBFF]">
