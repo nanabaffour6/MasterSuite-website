@@ -35,7 +35,7 @@ export function CurrentReleaseCard() {
   return (
     <div className="mx-auto mt-6 w-full max-w-sm rounded-[8px] border border-white/18 bg-white/8 px-4 py-3 text-center shadow-[0_14px_30px_rgb(0_0_0/10%)]">
       <p className="text-xs font-extrabold uppercase tracking-[0.08em] text-[#8FCBFF]">
-        Latest {MASTER_SUITE_CHANNEL} Build
+        Latest {MASTER_SUITE_CHANNEL} Release
       </p>
       <p className="mt-1 text-xl font-black text-white">
         MasterSuite Desktop {MASTER_SUITE_VERSION}
@@ -44,10 +44,10 @@ export function CurrentReleaseCard() {
         Build {MASTER_SUITE_BUILD} • {MASTER_SUITE_CHANNEL}
       </p>
       <p className="mt-1 text-sm text-[#DCEFFF]">
-        Build date {MASTER_SUITE_RELEASE_DATE}
+        Released {MASTER_SUITE_RELEASE_DATE}
       </p>
       <p className="mt-2 text-xs font-extrabold uppercase tracking-[0.08em] text-white/75">
-        Windows · Test candidate · Public release pending
+        Windows · 100% Free Download
       </p>
     </div>
   );
@@ -57,18 +57,16 @@ export function UpgradeNotice() {
   return (
     <div className="mx-auto mt-5 max-w-2xl rounded-[8px] border border-white/15 bg-white/6 px-4 py-3 text-left sm:text-center">
       <p className="text-sm font-extrabold text-white">
-        Existing MasterSuite users — do not upgrade yet
+        Already using MasterSuite?
       </p>
       <p className="mt-1 text-sm leading-6 text-[#DCEFFF]">
-        Build {MASTER_SUITE_BUILD} is a verified test candidate, not an approved public release.
-        Do not install it on a production school computer or upgrade your existing
-        MasterSuite installation. Keep your current application and backups unchanged.
+        Back up your school data before upgrading to Build {MASTER_SUITE_BUILD}.
+        Keep your existing school records and follow the normal upgrade process.
       </p>
       <p className="mt-2 text-sm leading-6 text-[#DCEFFF]">
-        Windows clean-install, upgrade, licence, Host/LAN, shortcut and data-preservation
-        acceptance remains outstanding, along with a security-advisory disposition.
-        The installer is unsigned. Use only an authorised disposable Windows test
-        environment with synthetic school data; do not bypass Windows security warnings.
+        This Windows installer is not digitally signed. Download it only from
+        the official link and contact support if Windows displays a security
+        warning; do not disable your security protections.
       </p>
       <details className="mt-3 text-left text-sm text-[#DCEFFF]">
         <summary className="cursor-pointer rounded-[4px] py-2 font-bold outline-none focus-visible:ring-3 focus-visible:ring-[#8FCBFF]">
