@@ -1,10 +1,12 @@
 import {
+  BarChart3,
   Calculator,
-  FileText,
+  FileSpreadsheet,
   Landmark,
-  BookOpen,
+  FileText,
   Wallet,
-  Printer,
+  ClipboardList,
+  BookOpen,
 } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
@@ -12,33 +14,43 @@ import { MASTER_SUITE_BUILD } from '@/lib/site-config';
 
 const releaseHighlights = [
   {
+    title: 'Improved Mock Grading & Analysis',
+    body: 'Clearer Standard and Stanine grading, individual performance insights and progress comparisons across mock examinations.',
+    icon: BarChart3,
+  },
+  {
     title: 'Improved Mock Result Slips',
-    body: 'Total Raw Score now displays correctly using the four compulsory subjects and the two highest-scoring eligible electives.',
+    body: 'A cleaner result slip with more accurate Total Raw Score calculations using four compulsory subjects and the two best eligible electives.',
     icon: Calculator,
   },
   {
-    title: 'Loans & Advances',
-    body: 'You can now delete eligible loan and salary advance records with clearer confirmations and messages.',
-    icon: Wallet,
-  },
-  {
     title: 'School Bank Details',
-    body: 'Authorised administrators can manage school bank account details and select the appropriate account.',
+    body: 'Authorised administrators can securely manage school bank accounts and choose the right account for financial documents.',
     icon: Landmark,
   },
   {
+    title: 'Students CSV Import',
+    body: 'Import student records more confidently with improved date checks, clear previews and safeguards against duplicate entries.',
+    icon: FileSpreadsheet,
+  },
+  {
     title: 'Improved Bank Advice',
-    body: 'Generate clearer bank advice letters and staff payment summaries for your bank.',
+    body: 'Prepare professional bank advice letters with organised staff payment details, departmental totals and PDF or Excel export.',
     icon: FileText,
   },
   {
-    title: 'Updated Reports and PDFs',
-    body: 'Improved presentation and consistent MasterSuite attribution across supported printable documents.',
-    icon: Printer,
+    title: 'Loans & Advances',
+    body: 'Manage staff loans and salary advances more easily, including improved confirmation and deletion of eligible records.',
+    icon: Wallet,
   },
   {
-    title: 'Better In-App Guidance',
-    body: 'Updated Help Centre and Smart Assistance guidance to make everyday tasks easier.',
+    title: 'Staff & Payroll Reports',
+    body: 'Clearer payroll summaries, salary registers and staff attendance or leave reports for everyday administration.',
+    icon: ClipboardList,
+  },
+  {
+    title: 'Help Centre & Smart Assistance',
+    body: 'Updated in-app guidance makes it easier to find answers and use key MasterSuite features.',
     icon: BookOpen,
   },
 ] as const;
@@ -63,7 +75,7 @@ export function WhatsNew() {
           </h2>
         </div>
 
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {releaseHighlights.map((highlight) => {
             const Icon = highlight.icon;
 
