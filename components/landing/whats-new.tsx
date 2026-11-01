@@ -20,14 +20,14 @@ export function WhatsNew() {
             What&apos;s New in Build {MASTER_SUITE_BUILD}
           </h2>
         </div>
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {releaseHighlights.map((highlight) => {
             const Icon = highlight.icon;
             return (
               <Card data-release-highlight key={highlight.title} className="rounded-[8px] border border-[#DCE8F3] bg-white py-0 shadow-[0_12px_28px_rgb(6_43_85/5%)] ring-0">
-                <CardContent className="min-h-52 p-5">
-                  <span className="grid size-11 place-items-center rounded-full bg-[#EDF7FF] text-[#087DE2]">
-                    <Icon aria-hidden="true" className="size-5" />
+                <CardContent className="min-h-56 p-6">
+                  <span className="grid size-14 place-items-center rounded-xl bg-gradient-to-br from-[#E4F4FF] to-[#D9E9FF] text-[#087DE2] shadow-sm ring-1 ring-[#C8E2F7]">
+                    <Icon aria-hidden="true" className="size-7" strokeWidth={1.8} />
                   </span>
                   <h3 className="mt-4 text-base font-extrabold text-[#062B55]">{highlight.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-[#526B85]">{highlight.body}</p>
