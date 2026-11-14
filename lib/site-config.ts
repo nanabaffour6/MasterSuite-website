@@ -14,7 +14,7 @@ export const MASTER_SUITE_DEMO_URL = 'https://youtu.be/O2poPsuxCUA';
 
 export const MASTER_SUITE_VERSION = '1.0.4';
 export const MASTER_SUITE_BUILD = '2026.11.14.02';
-export const MASTER_SUITE_CHANNEL = 'Security release candidate / testing';
+export const MASTER_SUITE_CHANNEL = 'Latest update';
 export const MASTER_SUITE_RELEASE_DATE = '14 November 2026';
 export const MASTER_SUITE_RELEASE_DATE_ISO = '2026-11-14';
 export const MASTER_SUITE_SITE_URL = 'https://www.mastersuiteapp.net/';
