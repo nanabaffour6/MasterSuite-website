@@ -1,32 +1,37 @@
-import { ShieldCheck, DatabaseBackup, Smartphone, Wifi, FolderCheck } from 'lucide-react';
+import { ShieldCheck, BookOpenCheck, Users, GraduationCap, DatabaseBackup, Wallet } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { MASTER_SUITE_BUILD } from '@/lib/site-config';
 
 const releaseHighlights = [
   {
-    title: 'Safer School Backups',
-    body: 'Portable backups now include supported school-managed attachments while preventing unrelated files on the host computer from being collected.',
+    title: 'Improved Teacher Access and Permissions',
+    body: 'Teachers can securely access the features and information relevant to their responsibilities, helping schools maintain better control over staff access and protect important records.',
     icon: ShieldCheck,
   },
   {
-    title: 'Improved Backup and Restore',
-    body: 'Memory-backed backup snapshots and more carefully restricted restore staging help protect school information during backup and recovery.',
+    title: 'Smarter Class and Subject Assignments',
+    body: 'School administrators can assign teachers to their respective classes and subjects more efficiently, making academic coordination, assessment recording and supervision easier.',
+    icon: BookOpenCheck,
+  },
+  {
+    title: 'Safer Staff and User Account Management',
+    body: 'Improved account management helps administrators organise staff records, manage system access and reduce the risk of accidental changes to important information.',
+    icon: Users,
+  },
+  {
+    title: 'Stronger Protection for Mock Examination Records',
+    body: 'Enhanced access controls help safeguard mock examination results and historical assessment records, supporting more reliable academic reporting and performance tracking.',
+    icon: GraduationCap,
+  },
+  {
+    title: 'Safer Backup and Recovery',
+    body: 'Improved backup and recovery safeguards help protect school information, making it safer to preserve important records and restore data when needed.',
     icon: DatabaseBackup,
   },
   {
-    title: 'More Reliable Companion Connections',
-    body: 'Improved connection messages help distinguish network problems from genuine host identity changes, making troubleshooting clearer.',
-    icon: Smartphone,
-  },
-  {
-    title: 'Better Local Network Detection',
-    body: 'MasterSuite prioritises the active local network address over unrelated virtual adapters when connecting phones to the school host.',
-    icon: Wifi,
-  },
-  {
-    title: 'Preserved School Records and Settings',
-    body: 'The update is designed to retain existing school records, licence information and approved device connections during supported upgrades.',
-    icon: FolderCheck,
+    title: 'Improved Staff Loans and Advances',
+    body: 'Schools can manage staff loans and salary advances more conveniently, with improved controls for maintaining accurate financial records and tracking staff obligations.',
+    icon: Wallet,
   },
 ] as const;
 
