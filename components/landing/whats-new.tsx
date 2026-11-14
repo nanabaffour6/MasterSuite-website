@@ -1,13 +1,33 @@
-import { BookOpenCheck, Smartphone, FileDown, ClipboardCheck, Users } from 'lucide-react';
+import { ShieldCheck, DatabaseBackup, Smartphone, Wifi, FolderCheck } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { MASTER_SUITE_BUILD } from '@/lib/site-config';
 
 const releaseHighlights = [
-  { title: 'Smarter Teacher Assignments', body: 'Easily assign teachers to their classes and subjects. Every teacher can enter marks for the subjects they teach, making assessment management simpler and more organised.', icon: BookOpenCheck },
-  { title: 'Improved MasterSuite Companion Experience', body: 'Teachers can conveniently access their assigned classes, record supported assessments and stay connected to their school’s MasterSuite system using their phones.', icon: Smartphone },
-  { title: 'Easier Student Data Export', body: 'Download student records for the entire school, a particular class or each class separately, making record keeping and reporting more convenient.', icon: FileDown },
-  { title: 'More Convenient Assessment Management', body: 'Teachers can record class exercises, homework, tests and examination marks using their school’s configured assessment system, helping schools keep learners’ performance records organised.', icon: ClipboardCheck },
-  { title: 'Better Staff and Class Organisation', body: 'School administrators can easily see which teachers are responsible for each class and subject, making academic supervision and staff coordination more convenient.', icon: Users },
+  {
+    title: 'Safer School Backups',
+    body: 'Portable backups now include supported school-managed attachments while preventing unrelated files on the host computer from being collected.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Improved Backup and Restore',
+    body: 'Memory-backed backup snapshots and more carefully restricted restore staging help protect school information during backup and recovery.',
+    icon: DatabaseBackup,
+  },
+  {
+    title: 'More Reliable Companion Connections',
+    body: 'Improved connection messages help distinguish network problems from genuine host identity changes, making troubleshooting clearer.',
+    icon: Smartphone,
+  },
+  {
+    title: 'Better Local Network Detection',
+    body: 'MasterSuite prioritises the active local network address over unrelated virtual adapters when connecting phones to the school host.',
+    icon: Wifi,
+  },
+  {
+    title: 'Preserved School Records and Settings',
+    body: 'The update is designed to retain existing school records, licence information and approved device connections during supported upgrades.',
+    icon: FolderCheck,
+  },
 ] as const;
 
 export function WhatsNew() {
@@ -15,7 +35,7 @@ export function WhatsNew() {
     <section id="whats-new" aria-labelledby="whats-new-heading" className="bg-[#F5FAFF] py-14 sm:py-18">
       <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-extrabold uppercase text-[#1688E8]">MasterSuite Desktop · Stable Release</p>
+          <p className="text-sm font-extrabold uppercase text-[#1688E8]">MasterSuite Desktop · Latest Update</p>
           <h2 id="whats-new-heading" className="mt-3 text-3xl font-black leading-tight text-[#062B55] sm:text-4xl">
             What&apos;s New in Build {MASTER_SUITE_BUILD}
           </h2>
