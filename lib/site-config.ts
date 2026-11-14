@@ -1,8 +1,8 @@
 export const MASTER_SUITE_DOWNLOAD_URL =
-  'https://drive.google.com/file/d/1HPUITu0tc_NEXGCo6bsDNzoEfFIu1yui/view?usp=sharing';
+  'https://drive.google.com/file/d/1lVB2CE0c9BV6bnblEeINZB3SGDWtj0lL/view?usp=sharing';
 
 export const MASTER_SUITE_COMPANION_DOWNLOAD_URL =
-  'https://drive.google.com/file/d/17AB1PbOqkMfazrQ9T8QH8tlI_vAjuDPZ/view?usp=sharing';
+  'https://drive.google.com/file/d/10a7KK7uMANyeDHtIAn9dFemTIIMe7vVZ/view?usp=sharing';
 export const MASTER_SUITE_COMPANION_VERSION = '1.0.1';
 export const MASTER_SUITE_COMPANION_CHANNEL = 'Preview / testing release';
 export const MASTER_SUITE_INSTALLER_FILENAME =
