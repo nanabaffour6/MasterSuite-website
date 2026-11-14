@@ -1,22 +1,22 @@
 export const MASTER_SUITE_DOWNLOAD_URL =
-  'https://drive.google.com/file/d/1HPUITu0tc_NEXGCo6bsDNzoEfFIu1yui/view?usp=sharing';
+  'https://drive.google.com/file/d/1lVB2CE0c9BV6bnblEeINZB3SGDWtj0lL/view?usp=sharing';
 
 export const MASTER_SUITE_COMPANION_DOWNLOAD_URL =
-  'https://drive.google.com/file/d/17AB1PbOqkMfazrQ9T8QH8tlI_vAjuDPZ/view?usp=sharing';
+  'https://drive.google.com/file/d/10a7KK7uMANyeDHtIAn9dFemTIIMe7vVZ/view?usp=sharing';
 export const MASTER_SUITE_COMPANION_VERSION = '1.0.1';
 export const MASTER_SUITE_COMPANION_CHANNEL = 'Preview / testing release';
 export const MASTER_SUITE_INSTALLER_FILENAME =
-  'MasterSuite-Setup-1.0.3-Build-2026.11.01.01.exe';
+  'MasterSuite-Setup-1.0.4-Build-2026.11.14.02-Security-RC1.exe';
 export const MASTER_SUITE_INSTALLER_SHA256 =
-  '128CF9103CA041CD2DB6618F299F6368FDC3D7ACE4E663A1EDC90139B8673AAF';
+  'D681B4847C7390A0A9E3294F4C9EFD48A455D58959D53E38B8F5447F7B3E0752';
 
 export const MASTER_SUITE_DEMO_URL = 'https://youtu.be/O2poPsuxCUA';
 
-export const MASTER_SUITE_VERSION = '1.0.3';
-export const MASTER_SUITE_BUILD = '2026.11.01.01';
-export const MASTER_SUITE_CHANNEL = 'Stable';
-export const MASTER_SUITE_RELEASE_DATE = '1 November 2026';
-export const MASTER_SUITE_RELEASE_DATE_ISO = '2026-11-01';
+export const MASTER_SUITE_VERSION = '1.0.4';
+export const MASTER_SUITE_BUILD = '2026.11.14.02';
+export const MASTER_SUITE_CHANNEL = 'Latest update';
+export const MASTER_SUITE_RELEASE_DATE = '14 November 2026';
+export const MASTER_SUITE_RELEASE_DATE_ISO = '2026-11-14';
 export const MASTER_SUITE_SITE_URL = 'https://www.mastersuiteapp.net/';
 
 export const MASTER_SUITE_SUPPORT_EMAIL = 'bafcreativegh@gmail.com';

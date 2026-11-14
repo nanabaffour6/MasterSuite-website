@@ -1,13 +1,38 @@
-import { BookOpenCheck, Smartphone, FileDown, ClipboardCheck, Users } from 'lucide-react';
+import { ShieldCheck, BookOpenCheck, Users, GraduationCap, DatabaseBackup, Wallet } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { MASTER_SUITE_BUILD } from '@/lib/site-config';
 
 const releaseHighlights = [
-  { title: 'Smarter Teacher Assignments', body: 'Easily assign teachers to their classes and subjects. Every teacher can enter marks for the subjects they teach, making assessment management simpler and more organised.', icon: BookOpenCheck },
-  { title: 'Improved MasterSuite Companion Experience', body: 'Teachers can conveniently access their assigned classes, record supported assessments and stay connected to their school’s MasterSuite system using their phones.', icon: Smartphone },
-  { title: 'Easier Student Data Export', body: 'Download student records for the entire school, a particular class or each class separately, making record keeping and reporting more convenient.', icon: FileDown },
-  { title: 'More Convenient Assessment Management', body: 'Teachers can record class exercises, homework, tests and examination marks using their school’s configured assessment system, helping schools keep learners’ performance records organised.', icon: ClipboardCheck },
-  { title: 'Better Staff and Class Organisation', body: 'School administrators can easily see which teachers are responsible for each class and subject, making academic supervision and staff coordination more convenient.', icon: Users },
+  {
+    title: 'Improved Teacher Access and Permissions',
+    body: 'Teachers can securely access the features and information relevant to their responsibilities, helping schools maintain better control over staff access and protect important records.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Smarter Class and Subject Assignments',
+    body: 'School administrators can assign teachers to their respective classes and subjects more efficiently, making academic coordination, assessment recording and supervision easier.',
+    icon: BookOpenCheck,
+  },
+  {
+    title: 'Safer Staff and User Account Management',
+    body: 'Improved account management helps administrators organise staff records, manage system access and reduce the risk of accidental changes to important information.',
+    icon: Users,
+  },
+  {
+    title: 'Stronger Protection for Mock Examination Records',
+    body: 'Enhanced access controls help safeguard mock examination results and historical assessment records, supporting more reliable academic reporting and performance tracking.',
+    icon: GraduationCap,
+  },
+  {
+    title: 'Safer Backup and Recovery',
+    body: 'Improved backup and recovery safeguards help protect school information, making it safer to preserve important records and restore data when needed.',
+    icon: DatabaseBackup,
+  },
+  {
+    title: 'Improved Staff Loans and Advances',
+    body: 'Schools can manage staff loans and salary advances more conveniently, with improved controls for maintaining accurate financial records and tracking staff obligations.',
+    icon: Wallet,
+  },
 ] as const;
 
 export function WhatsNew() {
@@ -15,7 +40,7 @@ export function WhatsNew() {
     <section id="whats-new" aria-labelledby="whats-new-heading" className="bg-[#F5FAFF] py-14 sm:py-18">
       <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-extrabold uppercase text-[#1688E8]">MasterSuite Desktop · Stable Release</p>
+          <p className="text-sm font-extrabold uppercase text-[#1688E8]">MasterSuite Desktop · Latest Update</p>
           <h2 id="whats-new-heading" className="mt-3 text-3xl font-black leading-tight text-[#062B55] sm:text-4xl">
             What&apos;s New in Build {MASTER_SUITE_BUILD}
           </h2>
