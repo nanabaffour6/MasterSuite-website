@@ -1,37 +1,37 @@
-import { ShieldCheck, BookOpenCheck, Users, GraduationCap, DatabaseBackup, Wallet } from 'lucide-react';
+import { ShieldCheck, Users, FileSpreadsheet, LayoutDashboard, KeyRound, ListFilter } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { MASTER_SUITE_BUILD } from '@/lib/site-config';
 
 const releaseHighlights = [
   {
-    title: 'Improved Teacher Access and Permissions',
-    body: 'Teachers can securely access the features and information relevant to their responsibilities, helping schools maintain better control over staff access and protect important records.',
+    title: 'Improved User Account Management',
+    body: 'Administrators can safely delete eligible user accounts while preserving historical records, audit information and important security protections.',
     icon: ShieldCheck,
   },
   {
-    title: 'Smarter Class and Subject Assignments',
-    body: 'School administrators can assign teachers to their respective classes and subjects more efficiently, making academic coordination, assessment recording and supervision easier.',
-    icon: BookOpenCheck,
-  },
-  {
-    title: 'Safer Staff and User Account Management',
-    body: 'Improved account management helps administrators organise staff records, manage system access and reduce the risk of accidental changes to important information.',
+    title: 'Improved Staff Record Management',
+    body: 'Eligible staff records can be deleted safely without losing historical payroll and attendance information. Outstanding financial obligations remain protected.',
     icon: Users,
   },
   {
-    title: 'Stronger Protection for Mock Examination Records',
-    body: 'Enhanced access controls help safeguard mock examination results and historical assessment records, supporting more reliable academic reporting and performance tracking.',
-    icon: GraduationCap,
+    title: 'Enhanced Terminal Broadsheets',
+    body: 'Improved terminal broadsheets display Class Assessment marks, Examination marks and Grades, with Excel export and A3 landscape PDF support for printing.',
+    icon: FileSpreadsheet,
   },
   {
-    title: 'Safer Backup and Recovery',
-    body: 'Improved backup and recovery safeguards help protect school information, making it safer to preserve important records and restore data when needed.',
-    icon: DatabaseBackup,
+    title: 'More Accurate Dashboard Student Counts',
+    body: 'The dashboard displays the number of active students for the selected academic year and updates when relevant student records change.',
+    icon: LayoutDashboard,
   },
   {
-    title: 'Improved Staff Loans and Advances',
-    body: 'Schools can manage staff loans and salary advances more conveniently, with improved controls for maintaining accurate financial records and tracking staff obligations.',
-    icon: Wallet,
+    title: 'Secure Administrator Account Recovery',
+    body: 'Administrators can securely configure recovery codes to regain access to their accounts when needed, with additional account-security protections.',
+    icon: KeyRound,
+  },
+  {
+    title: 'Improved Staff Status Filtering',
+    body: 'The Staff module opens with All Staff selected by default. Administrators can filter staff by Active, Inactive, On Leave and any separately supported Exited status.',
+    icon: ListFilter,
   },
 ] as const;
 
