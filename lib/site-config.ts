@@ -1,5 +1,5 @@
 export const MASTER_SUITE_DOWNLOAD_URL =
-  'https://drive.google.com/file/d/1lVB2CE0c9BV6bnblEeINZB3SGDWtj0lL/view?usp=sharing';
+  'https://drive.google.com/file/d/1Z1zgd_9uxHGOrG0YbPYB_g2Oa7yZIVKL/view?usp=sharing';
 
 export const MASTER_SUITE_COMPANION_DOWNLOAD_URL =
   'https://drive.google.com/file/d/10a7KK7uMANyeDHtIAn9dFemTIIMe7vVZ/view?usp=sharing';
