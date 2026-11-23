@@ -68,16 +68,18 @@ export function UpgradeNotice() {
         the official link and contact support if Windows displays a security
         warning; do not disable your security protections.
       </p>
-      <details className="mt-3 text-left text-sm text-[#DCEFFF]">
-        <summary className="cursor-pointer rounded-[4px] py-2 font-bold outline-none focus-visible:ring-3 focus-visible:ring-[#8FCBFF]">
-          Verify the Windows installer
-        </summary>
-        <p className="mt-2 break-all">{MASTER_SUITE_INSTALLER_FILENAME}</p>
-        <p className="mt-2">SHA-256:</p>
-        <code className="mt-1 block break-all text-xs leading-6">
-          {MASTER_SUITE_INSTALLER_SHA256}
-        </code>
-      </details>
+      {MASTER_SUITE_INSTALLER_FILENAME && MASTER_SUITE_INSTALLER_SHA256 ? (
+        <details className="mt-3 text-left text-sm text-[#DCEFFF]">
+          <summary className="cursor-pointer rounded-[4px] py-2 font-bold outline-none focus-visible:ring-3 focus-visible:ring-[#8FCBFF]">
+            Verify the Windows installer
+          </summary>
+          <p className="mt-2 break-all">{MASTER_SUITE_INSTALLER_FILENAME}</p>
+          <p className="mt-2">SHA-256:</p>
+          <code className="mt-1 block break-all text-xs leading-6">
+            {MASTER_SUITE_INSTALLER_SHA256}
+          </code>
+        </details>
+      ) : null}
     </div>
   );
 }
