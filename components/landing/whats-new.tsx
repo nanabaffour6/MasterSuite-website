@@ -20,7 +20,7 @@ const releaseHighlights = [
   },
   {
     title: 'More Accurate Dashboard Student Counts',
-    body: 'The dashboard displays the number of active students for the selected academic year and updates when relevant student records change.',
+    body: 'The dashboard displays the number of active students and updates when relevant records change. Class counts follow the selected academic year.',
     icon: LayoutDashboard,
   },
   {
